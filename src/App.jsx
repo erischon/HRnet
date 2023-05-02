@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>HRnet</h1>
+      <h1 className="bg-black">HRnet</h1>
     </>
   );
 }
