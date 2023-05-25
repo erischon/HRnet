@@ -20,7 +20,7 @@ export default function Row({
   isRequired = false,
 }) {
   return (
-    <div className="p-10">
+    <div className="p-4">
       <div className="w-56 relative group">
         <input
           id={id}
