@@ -17,17 +17,36 @@ export default function CreateEmployeePage() {
             onChange={() => {}}
             isRequired={true}
           />
-          <label htmlFor="first-name">First Name</label>
-          <input type="text" id="first-name" />
 
-          <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" />
+          <Row
+            label={"Last Name"}
+            id={"last-name"}
+            type={"text"}
+            placeholder={""}
+            value={""}
+            onChange={() => {}}
+            isRequired={true}
+          />
 
-          <label htmlFor="date-of-birth">Date of Birth</label>
-          <input id="date-of-birth" type="text" />
+          <Row
+            label={"Date of Birth"}
+            id={"date-of-birth"}
+            type={"text"}
+            placeholder={""}
+            value={""}
+            onChange={() => {}}
+            isRequired={true}
+          />
 
-          <label htmlFor="start-date">Start Date</label>
-          <input id="start-date" type="text" />
+          <Row
+            label={"Start Date"}
+            id={"start-date"}
+            type={"text"}
+            placeholder={""}
+            value={""}
+            onChange={() => {}}
+            isRequired={true}
+          />
 
           <fieldset className="flex border-2 bg-blue-200">
             <legend>Address</legend>
@@ -46,6 +65,16 @@ export default function CreateEmployeePage() {
             <label htmlFor="zip-code">Zip Code</label>
             <input id="zip-code" type="number" />
           </fieldset>
+
+          <Row
+            label={"Department"}
+            id={"department"}
+            type={"radio"}
+            placeholder={""}
+            value={""}
+            onChange={() => {}}
+            isRequired={true}
+          />
 
           <label htmlFor="department">Department</label>
           <select name="department" id="department">
