@@ -7,7 +7,7 @@ import Employee from "./pages/Employee-page.jsx";
 
 import "./index.css";
 import React from "react";
-import App from "./App.jsx";
+import HomePage from "./pages/Home-page.jsx";
 import Root from "./components/layout/Root.jsx";
 
 /**
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <App />,
+        element: <HomePage />,
       },
       {
         path: "employee/",
