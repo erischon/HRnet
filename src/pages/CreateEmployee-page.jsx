@@ -1,6 +1,6 @@
 import Row from "../components/Row";
 
-export default function CreateEmployeePage() {
+function CreateEmployee() {
   return (
     <>
       <div className="">
@@ -91,3 +91,5 @@ export default function CreateEmployeePage() {
     </>
   );
 }
+
+export default CreateEmployee;
