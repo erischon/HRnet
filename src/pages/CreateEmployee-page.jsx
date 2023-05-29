@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 import Row from "../components/Row";
 
 function CreateEmployee() {
   return (
     <>
       <div className="">
-        <a href="employee-list.html">View Current Employees</a>
+        <Link to="/employee">View Current Employees</Link>
 
         <h2>Create Employee</h2>
         <form action="#" id="create-employee" className="flex flex-col">

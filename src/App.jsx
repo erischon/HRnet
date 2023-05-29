@@ -1,11 +1,8 @@
-import CreateEmployee from "./pages/CreateEmployee-page";
-
 function App() {
   return (
-    <>
-      <h1 className="">HRnet</h1>
-      <CreateEmployee />
-    </>
+    <div className="flex flex-col gap-4 items-center justify-center w-full h-screen">
+      <h1 className="text-4xl font-semibold">HRnet</h1>
+    </div>
   );
 }
 
