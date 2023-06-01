@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
-import "react-datepicker/dist/react-datepicker.css";
+import { states } from "../constants/states.list";
+import { departments } from "../constants/departments.list";
 
 function CreateEmployeeForm() {
   const form = useForm();
@@ -54,32 +55,61 @@ function CreateEmployeeForm() {
           />
         </div>
 
-        <fieldset className="flex border-2">
-          <legend>Address</legend>
+        <div>
+          <label htmlFor="street">Street</label>
+          <input
+            id="street"
+            type="text"
+            {...register("street")}
+            className="block border"
+          />
+        </div>
 
-          <div className="flex">
-            <label htmlFor="street">Street</label>
-            <input id="street" type="text" {...register("street")} />
-          </div>
-
+        <div>
           <label htmlFor="city">City</label>
-          <input id="city" type="text" {...register("city")} />
+          <input
+            id="city"
+            type="text"
+            {...register("city")}
+            className="block border"
+          />
+        </div>
 
+        <div>
           <label htmlFor="state">State</label>
-          <select name="state" id="state" {...register("state")}></select>
+          <select id="state" {...register("state")} className="block border">
+            {states.map((state) => (
+              <option key={state.abbreviation} value={state.abbreviation}>
+                {state.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
+        <div>
           <label htmlFor="zipCode">Zip Code</label>
-          <input id="zipCode" type="number" {...register("zipCode")} />
-        </fieldset>
+          <input
+            id="zipCode"
+            type="number"
+            {...register("zipCode")}
+            className="block border"
+          />
+        </div>
 
-        <label htmlFor="department">Department</label>
-        <select name="department" id="department" {...register("department")}>
-          <option>Sales</option>
-          <option>Marketing</option>
-          <option>Engineering</option>
-          <option>Human Resources</option>
-          <option>Legal</option>
-        </select>
+        <div>
+          <label htmlFor="department">Department</label>
+          <select
+            id="department"
+            {...register("department")}
+            className="block border"
+          >
+            {departments.map((state, n) => (
+              <option key={n} value={departments.name}>
+                {state.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
         <button>Submit</button>
       </form>
