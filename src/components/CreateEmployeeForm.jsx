@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 
+import "react-datepicker/dist/react-datepicker.css";
+
 function CreateEmployeeForm() {
   const form = useForm();
   const { register, control, handleSubmit } = form;
@@ -33,12 +35,12 @@ function CreateEmployeeForm() {
         </div>
 
         <div>
-          <label htmlFor="dateOfBirth">Date Of Birth</label>
+          <label htmlFor="birthDate">Date Of Birth</label>
           <input
-            id="dateOfBirth"
-            type="text"
+            id="birthDate"
+            type="date"
             className="block border"
-            {...register("dateOfBirth")}
+            {...register("birthDate")}
           />
         </div>
 
@@ -46,7 +48,7 @@ function CreateEmployeeForm() {
           <label htmlFor="startDate">Start date</label>
           <input
             id="startDate"
-            type="text"
+            type="date"
             className="block border"
             {...register("startDate")}
           />
