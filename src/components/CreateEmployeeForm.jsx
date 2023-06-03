@@ -14,14 +14,20 @@ function CreateEmployeeForm() {
 
   return (
     <>
-      <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="flex flex-col"
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
         <div>
           <label htmlFor="firstName">First Name</label>
           <input
             id="firstName"
             type="text"
             className="block border"
-            {...register("firstName")}
+            {...register("firstName", {
+              required: { value: true, message: "First Name is required" },
+            })}
           />
         </div>
 
@@ -31,7 +37,9 @@ function CreateEmployeeForm() {
             id="lastName"
             type="text"
             className="block border"
-            {...register("lastName")}
+            {...register("lastName", {
+              required: { value: true, message: "Last name is required" },
+            })}
           />
         </div>
 
@@ -41,7 +49,9 @@ function CreateEmployeeForm() {
             id="birthDate"
             type="date"
             className="block border"
-            {...register("birthDate")}
+            {...register("birthDate", {
+              required: { value: true, message: "Date of birth is required" },
+            })}
           />
         </div>
 
@@ -51,7 +61,9 @@ function CreateEmployeeForm() {
             id="startDate"
             type="date"
             className="block border"
-            {...register("startDate")}
+            {...register("startDate", {
+              required: { value: true, message: "Start date is required" },
+            })}
           />
         </div>
 
@@ -60,7 +72,9 @@ function CreateEmployeeForm() {
           <input
             id="street"
             type="text"
-            {...register("street")}
+            {...register("street", {
+              required: { value: true, message: "Street is required" },
+            })}
             className="block border"
           />
         </div>
@@ -70,14 +84,26 @@ function CreateEmployeeForm() {
           <input
             id="city"
             type="text"
-            {...register("city")}
+            {...register("city", {
+              required: { value: true, message: "City is required" },
+            })}
             className="block border"
           />
         </div>
 
         <div>
           <label htmlFor="state">State</label>
-          <select id="state" {...register("state")} className="block border">
+          <select
+            id="state"
+            {...register("state", {
+              required: { value: true, message: "State is required" },
+            })}
+            className="block border"
+          >
+            <option disabled selected value="">
+              -- select a state --
+            </option>
+
             {states.map((state) => (
               <option key={state.abbreviation} value={state.abbreviation}>
                 {state.name}
@@ -91,7 +117,9 @@ function CreateEmployeeForm() {
           <input
             id="zipCode"
             type="number"
-            {...register("zipCode")}
+            {...register("zipCode", {
+              required: { value: true, message: "Zip code is required" },
+            })}
             className="block border"
           />
         </div>
@@ -100,9 +128,15 @@ function CreateEmployeeForm() {
           <label htmlFor="department">Department</label>
           <select
             id="department"
-            {...register("department")}
+            {...register("department", {
+              required: { value: true, message: "Department is required" },
+            })}
             className="block border"
           >
+            <option disabled selected value="">
+              -- select a dept. --
+            </option>
+
             {departments.map((state, n) => (
               <option key={n} value={departments.name}>
                 {state.name}
