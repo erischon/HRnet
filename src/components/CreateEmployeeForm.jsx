@@ -6,7 +6,8 @@ import { departments } from "../constants/departments.list";
 
 function CreateEmployeeForm() {
   const form = useForm();
-  const { register, control, handleSubmit } = form;
+  const { register, control, handleSubmit, formState } = form;
+  const { errors } = formState;
 
   const onSubmit = (data) => {
     console.log("Form submitted", data);
@@ -29,6 +30,8 @@ function CreateEmployeeForm() {
               required: { value: true, message: "First Name is required" },
             })}
           />
+
+          <p>{errors.firstName?.message}</p>
         </div>
 
         <div>
@@ -41,6 +44,8 @@ function CreateEmployeeForm() {
               required: { value: true, message: "Last name is required" },
             })}
           />
+
+          <p>{errors.lastName?.message}</p>
         </div>
 
         <div>
@@ -53,6 +58,8 @@ function CreateEmployeeForm() {
               required: { value: true, message: "Date of birth is required" },
             })}
           />
+
+          <p>{errors.birthDate?.message}</p>
         </div>
 
         <div>
@@ -65,6 +72,8 @@ function CreateEmployeeForm() {
               required: { value: true, message: "Start date is required" },
             })}
           />
+
+          <p>{errors.startDate?.message}</p>
         </div>
 
         <div>
@@ -77,6 +86,8 @@ function CreateEmployeeForm() {
             })}
             className="block border"
           />
+
+          <p>{errors.street?.message}</p>
         </div>
 
         <div>
@@ -89,6 +100,8 @@ function CreateEmployeeForm() {
             })}
             className="block border"
           />
+
+          <p>{errors.city?.message}</p>
         </div>
 
         <div>
@@ -110,6 +123,8 @@ function CreateEmployeeForm() {
               </option>
             ))}
           </select>
+
+          <p>{errors.state?.message}</p>
         </div>
 
         <div>
@@ -122,6 +137,8 @@ function CreateEmployeeForm() {
             })}
             className="block border"
           />
+
+          <p>{errors.zipCode?.message}</p>
         </div>
 
         <div>
@@ -143,9 +160,11 @@ function CreateEmployeeForm() {
               </option>
             ))}
           </select>
+
+          <p>{errors.department?.message}</p>
         </div>
 
-        <button>Submit</button>
+        <button className="px-2 py-1 bg-cyan-800 text-white">Submit</button>
       </form>
 
       <DevTool control={control} />
