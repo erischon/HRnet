@@ -20,7 +20,7 @@ function CreateEmployeeForm() {
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
-        <div>
+        <div className="mb-4">
           <label htmlFor="firstName">First Name</label>
           <input
             id="firstName"
@@ -31,10 +31,10 @@ function CreateEmployeeForm() {
             })}
           />
 
-          <p>{errors.firstName?.message}</p>
+          <p className="text-red-500 text-sm">{errors.firstName?.message}</p>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="lastName">Last Name</label>
           <input
             id="lastName"
@@ -45,10 +45,10 @@ function CreateEmployeeForm() {
             })}
           />
 
-          <p>{errors.lastName?.message}</p>
+          <p className="text-red-500 text-sm">{errors.lastName?.message}</p>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="birthDate">Date Of Birth</label>
           <input
             id="birthDate"
@@ -59,10 +59,10 @@ function CreateEmployeeForm() {
             })}
           />
 
-          <p>{errors.birthDate?.message}</p>
+          <p className="text-red-500 text-sm">{errors.birthDate?.message}</p>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="startDate">Start date</label>
           <input
             id="startDate"
@@ -73,10 +73,10 @@ function CreateEmployeeForm() {
             })}
           />
 
-          <p>{errors.startDate?.message}</p>
+          <p className="text-red-500 text-sm">{errors.startDate?.message}</p>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="street">Street</label>
           <input
             id="street"
@@ -87,10 +87,10 @@ function CreateEmployeeForm() {
             className="block border"
           />
 
-          <p>{errors.street?.message}</p>
+          <p className="text-red-500 text-sm">{errors.street?.message}</p>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="city">City</label>
           <input
             id="city"
@@ -101,10 +101,10 @@ function CreateEmployeeForm() {
             className="block border"
           />
 
-          <p>{errors.city?.message}</p>
+          <p className="text-red-500 text-sm">{errors.city?.message}</p>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="state">State</label>
           <select
             id="state"
@@ -124,7 +124,7 @@ function CreateEmployeeForm() {
             ))}
           </select>
 
-          <p>{errors.state?.message}</p>
+          <p className="text-red-500 text-sm">{errors.state?.message}</p>
         </div>
 
         <div>
@@ -138,7 +138,7 @@ function CreateEmployeeForm() {
             className="block border"
           />
 
-          <p>{errors.zipCode?.message}</p>
+          <p className="text-red-500 text-sm">{errors.zipCode?.message}</p>
         </div>
 
         <div>
@@ -161,7 +161,7 @@ function CreateEmployeeForm() {
             ))}
           </select>
 
-          <p>{errors.department?.message}</p>
+          <p className="text-red-500 text-sm">{errors.department?.message}</p>
         </div>
 
         <button className="px-2 py-1 bg-cyan-800 text-white">Submit</button>
