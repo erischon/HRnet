@@ -146,7 +146,7 @@ function CreateEmployeeForm() {
             <input
               id="street"
               type="text"
-              placeholder="Enter street address..."
+              placeholder="Enter street name..."
               {...register("street", {
                 required: { value: true, message: "Street is required" },
               })}
@@ -165,7 +165,7 @@ function CreateEmployeeForm() {
             <input
               id="city"
               type="text"
-              placeholder="Enter city address..."
+              placeholder="Enter city name..."
               {...register("city", {
                 required: { value: true, message: "City is required" },
               })}
@@ -215,7 +215,7 @@ function CreateEmployeeForm() {
             <input
               id="zipCode"
               type="number"
-              placeholder="Enter Zip code address..."
+              placeholder="Enter Zip code..."
               {...register("zipCode", {
                 required: { value: true, message: "Zip code is required" },
               })}
