@@ -16,155 +16,210 @@ function CreateEmployeeForm() {
   return (
     <>
       <form
-        className="flex flex-col"
+        className="flex flex-col w-full sm:max-w-xl px-6 py-6 mx-auto mb-6 bg-slate-50 rounded-md"
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
-        <div className="mb-4">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            id="firstName"
-            type="text"
-            className="block border"
-            {...register("firstName", {
-              required: { value: true, message: "First Name is required" },
-            })}
-          />
+        <h2 className="font-light text-xl mb-4">Employee Informations</h2>
 
-          <p className="text-red-500 text-sm">{errors.firstName?.message}</p>
-        </div>
+        <div className="sm:grid sm:grid-cols-2 sm:gap-2 mb-4">
+          <div className="flex flex-col mb-2">
+            <label htmlFor="firstName" className="mb-1 font-semibold">
+              First Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="firstName"
+              type="text"
+              className="block border px-2 py-1 rounded-md"
+              placeholder="Enter first name..."
+              {...register("firstName", {
+                required: { value: true, message: "First Name is required" },
+              })}
+            />
 
-        <div className="mb-4">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            id="lastName"
-            type="text"
-            className="block border"
-            {...register("lastName", {
-              required: { value: true, message: "Last name is required" },
-            })}
-          />
+            <p className="text-red-500 text-sm italic">
+              {errors.firstName?.message}
+            </p>
+          </div>
 
-          <p className="text-red-500 text-sm">{errors.lastName?.message}</p>
-        </div>
+          <div className="flex flex-col mb-2">
+            <label htmlFor="lastName" className="mb-1 font-semibold">
+              Last Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="lastName"
+              type="text"
+              className="block border px-2 py-1 rounded-md"
+              placeholder="Enter last name..."
+              {...register("lastName", {
+                required: { value: true, message: "Last name is required" },
+              })}
+            />
 
-        <div className="mb-4">
-          <label htmlFor="birthDate">Date Of Birth</label>
-          <input
-            id="birthDate"
-            type="date"
-            className="block border"
-            {...register("birthDate", {
-              required: { value: true, message: "Date of birth is required" },
-            })}
-          />
+            <p className="text-red-500 text-sm italic">
+              {errors.lastName?.message}
+            </p>
+          </div>
 
-          <p className="text-red-500 text-sm">{errors.birthDate?.message}</p>
-        </div>
+          <div className="flex flex-col mb-2">
+            <label htmlFor="birthDate" className="mb-1 font-semibold">
+              Date Of Birth <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="birthDate"
+              type="date"
+              className="block border px-2 py-1 rounded-md"
+              {...register("birthDate", {
+                required: { value: true, message: "Date of birth is required" },
+              })}
+            />
 
-        <div className="mb-4">
-          <label htmlFor="startDate">Start date</label>
-          <input
-            id="startDate"
-            type="date"
-            className="block border"
-            {...register("startDate", {
-              required: { value: true, message: "Start date is required" },
-            })}
-          />
+            <p className="text-red-500 text-sm italic">
+              {errors.birthDate?.message}
+            </p>
+          </div>
 
-          <p className="text-red-500 text-sm">{errors.startDate?.message}</p>
-        </div>
+          <div className="flex flex-col mb-2">
+            <label htmlFor="startDate" className="mb-1 font-semibold">
+              Start date <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="startDate"
+              type="date"
+              className="block border px-2 py-1 rounded-md"
+              {...register("startDate", {
+                required: { value: true, message: "Start date is required" },
+              })}
+            />
 
-        <div className="mb-4">
-          <label htmlFor="street">Street</label>
-          <input
-            id="street"
-            type="text"
-            {...register("street", {
-              required: { value: true, message: "Street is required" },
-            })}
-            className="block border"
-          />
+            <p className="text-red-500 text-sm italic">
+              {errors.startDate?.message}
+            </p>
+          </div>
 
-          <p className="text-red-500 text-sm">{errors.street?.message}</p>
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="city">City</label>
-          <input
-            id="city"
-            type="text"
-            {...register("city", {
-              required: { value: true, message: "City is required" },
-            })}
-            className="block border"
-          />
-
-          <p className="text-red-500 text-sm">{errors.city?.message}</p>
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="state">State</label>
-          <select
-            id="state"
-            {...register("state", {
-              required: { value: true, message: "State is required" },
-            })}
-            className="block border"
-          >
-            <option disabled selected value="">
-              -- select a state --
-            </option>
-
-            {states.map((state) => (
-              <option key={state.abbreviation} value={state.abbreviation}>
-                {state.name}
+          <div className="flex flex-col mb-2">
+            <label htmlFor="department" className="mb-1 font-semibold">
+              Department <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="department"
+              className="block border px-2 py-1 rounded-md text-gray-400"
+              {...register("department", {
+                required: { value: true, message: "Department is required" },
+              })}
+            >
+              <option disabled selected value="">
+                Select a department...
               </option>
-            ))}
-          </select>
 
-          <p className="text-red-500 text-sm">{errors.state?.message}</p>
+              {departments.map((state, n) => (
+                <option key={n} value={departments.name} className="text-black">
+                  {state.name}
+                </option>
+              ))}
+            </select>
+
+            <p className="text-red-500 text-sm italic">
+              {errors.department?.message}
+            </p>
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="zipCode">Zip Code</label>
-          <input
-            id="zipCode"
-            type="number"
-            {...register("zipCode", {
-              required: { value: true, message: "Zip code is required" },
-            })}
-            className="block border"
-          />
+        <h2 className="font-light text-xl mb-4">Employee Address</h2>
 
-          <p className="text-red-500 text-sm">{errors.zipCode?.message}</p>
-        </div>
+        <div className="sm:grid sm:grid-cols-2 sm:gap-2">
+          <div className="flex flex-col mb-2">
+            <label htmlFor="street" className="mb-1 font-semibold">
+              Street <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="street"
+              type="text"
+              placeholder="Enter street address..."
+              {...register("street", {
+                required: { value: true, message: "Street is required" },
+              })}
+              className="block border px-2 py-1 rounded-md"
+            />
 
-        <div>
-          <label htmlFor="department">Department</label>
-          <select
-            id="department"
-            {...register("department", {
-              required: { value: true, message: "Department is required" },
-            })}
-            className="block border"
-          >
-            <option disabled selected value="">
-              -- select a dept. --
-            </option>
+            <p className="text-red-500 text-sm italic">
+              {errors.street?.message}
+            </p>
+          </div>
 
-            {departments.map((state, n) => (
-              <option key={n} value={departments.name}>
-                {state.name}
+          <div className="flex flex-col mb-2">
+            <label htmlFor="city" className="mb-1 font-semibold">
+              City <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="city"
+              type="text"
+              placeholder="Enter city address..."
+              {...register("city", {
+                required: { value: true, message: "City is required" },
+              })}
+              className="block border px-2 py-1 rounded-md"
+            />
+
+            <p className="text-red-500 text-sm italic">
+              {errors.city?.message}
+            </p>
+          </div>
+
+          <div className="flex flex-col mb-2">
+            <label htmlFor="state" className="mb-1 font-semibold">
+              State <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="state"
+              className="block border px-2 py-1 rounded-md text-gray-400"
+              {...register("state", {
+                required: { value: true, message: "State is required" },
+              })}
+            >
+              <option disabled selected value="" className="">
+                Select a state...
               </option>
-            ))}
-          </select>
 
-          <p className="text-red-500 text-sm">{errors.department?.message}</p>
+              {states.map((state) => (
+                <option
+                  key={state.abbreviation}
+                  value={state.abbreviation}
+                  className="text-black"
+                >
+                  {state.name}
+                </option>
+              ))}
+            </select>
+
+            <p className="text-red-500 text-sm italic">
+              {errors.state?.message}
+            </p>
+          </div>
+
+          <div className="flex flex-col mb-2">
+            <label htmlFor="zipCode" className="mb-1 font-semibold">
+              Zip Code <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="zipCode"
+              type="number"
+              placeholder="Enter Zip code address..."
+              {...register("zipCode", {
+                required: { value: true, message: "Zip code is required" },
+              })}
+              className="block border px-2 py-1 rounded-md"
+            />
+
+            <p className="text-red-500 text-sm italic">
+              {errors.zipCode?.message}
+            </p>
+          </div>
         </div>
 
-        <button className="px-2 py-1 bg-cyan-800 text-white">Submit</button>
+        <button className="px-2 py-1 bg-cyan-800 text-white font-semibold rounded-md mt-6 mb-2 w-full mx-auto">
+          Submit
+        </button>
       </form>
 
       <DevTool control={control} />
