@@ -5,7 +5,18 @@ import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
 
 function CreateEmployeeForm() {
-  const form = useForm();
+  const form = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      birthDate: "",
+      startDate: "",
+      department: "",
+      street: "",
+      city: "",
+      state: "",
+    },
+  });
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
 
@@ -108,7 +119,7 @@ function CreateEmployeeForm() {
                 required: { value: true, message: "Department is required" },
               })}
             >
-              <option disabled selected value="">
+              <option disabled value="">
                 Select a department...
               </option>
 
@@ -177,7 +188,7 @@ function CreateEmployeeForm() {
                 required: { value: true, message: "State is required" },
               })}
             >
-              <option disabled selected value="" className="">
+              <option disabled value="">
                 Select a state...
               </option>
 
