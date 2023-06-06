@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
+// import { DevTool } from "@hookform/devtools";
 
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
@@ -17,7 +17,7 @@ function CreateEmployeeForm() {
       state: "",
     },
   });
-  const { register, control, handleSubmit, formState } = form;
+  const { register, handleSubmit, formState } = form;
   const { errors } = formState;
 
   const onSubmit = (data) => {
@@ -233,7 +233,7 @@ function CreateEmployeeForm() {
         </button>
       </form>
 
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </>
   );
 }
