@@ -33,6 +33,9 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
+/**
+ * @description EmployeeTable component
+ */
 function EmployeeTable() {
   return (
     <div style={{ height: 400, width: "100%" }}>
