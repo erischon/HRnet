@@ -1,4 +1,5 @@
 import EmployeeTable from "../components/EmployeeTable";
+import { employeesData } from "../data/employees.js";
 
 function Employee() {
   return (
@@ -8,7 +9,7 @@ function Employee() {
           Current Employees
         </h2>
 
-        <EmployeeTable />
+        <EmployeeTable employeesData={employeesData} />
       </div>
     </>
   );

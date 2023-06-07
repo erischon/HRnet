@@ -1,5 +1,6 @@
-export const data = [
+export const employeesData = [
   {
+    id: 2,
     birthDate: "2023-06-06",
     city: "test city",
     department: "Sales",
@@ -11,6 +12,7 @@ export const data = [
     zipCode: "00000",
   },
   {
+    id: 3,
     birthDate: "2022-06-06",
     city: "test2 city",
     department: "Sales",
