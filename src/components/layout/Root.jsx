@@ -15,14 +15,14 @@ function Root() {
             className="flex items-center gap-2 hover:text-gray-400"
           >
             <HiOutlineUsers />
-            Employés
+            Employees
           </Link>
           <Link
             to="/employee/create"
             className="flex items-center gap-2 hover:text-gray-400"
           >
             <HiOutlineUserPlus />
-            Créer
+            Add Employee
           </Link>
         </nav>
       </header>
