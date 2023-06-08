@@ -25,7 +25,7 @@ function EmployeeTable({ employeesData }) {
   const rows = employeesData;
 
   return (
-    <div style={{ height: 600, width: "100%" }}>
+    <div style={{ height: "auto", width: "100%" }}>
       <DataGrid
         rows={rows}
         columns={columns}
