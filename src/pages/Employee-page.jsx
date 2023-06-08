@@ -4,7 +4,7 @@ import { employeesData } from "../data/employees.js";
 function Employee() {
   return (
     <>
-      <div className="flew w-full ">
+      <div className="flew w-full mb-6">
         <h2 className="text-2xl font-semibold text-center mb-4">
           Current Employees
         </h2>

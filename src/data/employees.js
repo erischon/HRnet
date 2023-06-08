@@ -8,7 +8,7 @@ export const employeesData = [
     lastName: "test last name",
     startDate: "2023-06-07",
     state: "HI",
-    street: "test street",
+    street: "47 avenue Atreides",
     zipCode: "00000",
   },
   {
