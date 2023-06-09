@@ -1,14 +1,16 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
+import { store } from "./app/store";
+import HomePage from "./pages/Home-page.jsx";
 import ErrorPage from "./pages/Error-page.jsx";
 import CreateEmployee from "./pages/CreateEmployee-page.jsx";
 import Employee from "./pages/Employee-page.jsx";
+import Root from "./components/layout/Root.jsx";
 
 import "./index.css";
-import React from "react";
-import HomePage from "./pages/Home-page.jsx";
-import Root from "./components/layout/Root.jsx";
 
 /**
  * @description The router of the application.
@@ -40,6 +42,8 @@ const router = createBrowserRouter([
  */
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

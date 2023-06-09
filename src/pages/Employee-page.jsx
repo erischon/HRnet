@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
+
 import EmployeeTable from "../components/EmployeeTable";
-import { employeesData } from "../data/employees.js";
 
 function Employee() {
+  const { employeeList } = useSelector((store) => store.employee);
+
   return (
     <>
       <div className="flew w-full mb-6">
@@ -9,7 +12,7 @@ function Employee() {
           Current Employees
         </h2>
 
-        <EmployeeTable employeesData={employeesData} />
+        <EmployeeTable employeesData={employeeList} />
       </div>
     </>
   );
