@@ -1,12 +1,17 @@
 import { useForm } from "react-hook-form";
-// import { DevTool } from "@hookform/devtools";
+import { useSelector, useDispatch } from "react-redux";
 
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
+import { addEmployee } from "../features/employee/employeeSlice";
 
 function CreateEmployeeForm() {
+  const { employeeList } = useSelector((state) => state.employee);
+  const dispatch = useDispatch();
+
   const form = useForm({
     defaultValues: {
+      id: "",
       firstName: "",
       lastName: "",
       birthDate: "",
@@ -21,7 +26,9 @@ function CreateEmployeeForm() {
   const { errors } = formState;
 
   const onSubmit = (data) => {
-    console.log("Form submitted", data);
+    data.id = employeeList.length + 1;
+
+    dispatch(addEmployee(data));
   };
 
   return (
@@ -232,8 +239,6 @@ function CreateEmployeeForm() {
           Submit
         </button>
       </form>
-
-      {/* <DevTool control={control} /> */}
     </>
   );
 }
