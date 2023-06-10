@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { employeesData } from "../../data/employees";
+// import { employeesData } from "../../data/employees";
 
+// Initial state
 const initialState = {
-  employeeList: employeesData,
+  employeeList: [],
   isLoading: true,
 };
 
+// Slice for employee
 const employeeSlice = createSlice({
   name: "employee",
   initialState,
