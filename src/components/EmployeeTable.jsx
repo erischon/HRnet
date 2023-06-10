@@ -6,6 +6,7 @@ EmployeeTable.propTypes = {
   employeesData: PropTypes.arrayOf(PropTypes.object),
 };
 
+// Columns for the table
 const columns = [
   { field: "firstName", headerName: "First name", minWidth: 100, flex: 1 },
   { field: "lastName", headerName: "Last name", minWidth: 100, flex: 1 },

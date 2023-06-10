@@ -1,3 +1,4 @@
+// Definition : List of departments in HRnet
 export const departments = [
   {
     name: "Sales",

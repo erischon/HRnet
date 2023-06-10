@@ -1,6 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
 import { HiOutlineUserPlus, HiOutlineUsers } from "react-icons/hi2";
 
+/**
+ * @description Root component for application layout
+ */
 function Root() {
   return (
     <div className="mx-4 mt-2">

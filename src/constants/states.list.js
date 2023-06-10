@@ -1,3 +1,4 @@
+// Definition: List of states in the United States of America
 export const states = [
   {
     name: "Alabama",

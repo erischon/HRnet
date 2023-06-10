@@ -2,6 +2,9 @@ import { useSelector } from "react-redux";
 
 import EmployeeTable from "../components/EmployeeTable";
 
+/**
+ * @description Page for viewing employees list
+ */
 function Employee() {
   const { employeeList } = useSelector((store) => store.employee);
 

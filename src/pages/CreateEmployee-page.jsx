@@ -1,5 +1,8 @@
 import CreateEmployeeForm from "../components/CreateEmployeeForm";
 
+/**
+ * @description Page for creating an employee
+ */
 function CreateEmployee() {
   return (
     <>

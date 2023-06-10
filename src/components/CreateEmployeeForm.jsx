@@ -5,6 +5,9 @@ import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
 import { addEmployee } from "../features/employee/employeeSlice";
 
+/**
+ * @description Create employee form component
+ */
 function CreateEmployeeForm() {
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
@@ -22,6 +25,7 @@ function CreateEmployeeForm() {
       state: "",
     },
   });
+
   const { register, handleSubmit, formState } = form;
   const { errors } = formState;
 
