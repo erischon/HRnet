@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
@@ -9,8 +11,11 @@ import { addEmployee } from "../features/employee/employeeSlice";
  * @description Create employee form component
  */
 function CreateEmployeeForm() {
+  const [message, setMessage] = useState(null);
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const form = useForm({
     defaultValues: {
@@ -33,6 +38,10 @@ function CreateEmployeeForm() {
     data.id = employeeList.length + 1;
 
     dispatch(addEmployee(data));
+
+    form.reset();
+    setMessage("Employee added successfully");
+    navigate("/employee");
   };
 
   return (
@@ -243,6 +252,8 @@ function CreateEmployeeForm() {
           Submit
         </button>
       </form>
+
+      {message ? <p>{message}</p> : null}
     </>
   );
 }
