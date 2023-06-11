@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
 import { addEmployee } from "../features/employee/employeeSlice";
+import MyModal from "./modal/MyModal";
 
 /**
  * @description Create employee form component
