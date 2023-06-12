@@ -254,7 +254,7 @@ function CreateEmployeeForm() {
         </button>
       </form>
 
-      {message ? <p>{message}</p> : null}
+      <MyModal message={message} setMessage={setMessage} />
     </>
   );
 }
