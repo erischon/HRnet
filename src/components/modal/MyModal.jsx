@@ -20,8 +20,6 @@ function MyModal({ modalProps }) {
 
   const onClose = () => {
     isOpen(false);
-
-    console.log("onClose");
   };
 
   return (
@@ -38,7 +36,7 @@ function MyModal({ modalProps }) {
 
           <div className="py-4 text-left px-4">{message}</div>
 
-          <div className="flex justify-between items-center w-100 p-4">
+          <div className="flex gap-2 items-center w-100 p-4">
             <button
               className="bg-red-700 rounded-md px-3 py-1 text-white font-semibold"
               onClick={actionA?.action}
