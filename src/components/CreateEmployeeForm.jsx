@@ -12,7 +12,7 @@ import MyModal from "./modal/MyModal";
  * @description Create employee form component
  */
 function CreateEmployeeForm() {
-  const [message, setMessage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
 
@@ -39,10 +39,26 @@ function CreateEmployeeForm() {
     data.id = employeeList.length + 1;
 
     dispatch(addEmployee(data));
-
     form.reset();
-    setMessage("Employee added successfully");
-    navigate("/employee");
+    setIsModalOpen(true);
+  };
+
+  const modalProps = {
+    title: "Employee created successfully",
+    message: "Le message que l'on souhaite voir apparaitre dans le modal.",
+    actionA: {
+      title: "Back to creation form",
+      action: () => {
+        setIsModalOpen(false);
+      },
+    },
+    actionB: {
+      title: "Go to employee list",
+      action: () => {
+        navigate("/employee");
+      },
+    },
+    isOpen: setIsModalOpen,
   };
 
   return (
@@ -254,7 +270,7 @@ function CreateEmployeeForm() {
         </button>
       </form>
 
-      <MyModal message={message} setMessage={setMessage} />
+      {isModalOpen ? <MyModal modalProps={modalProps} /> : null}
     </>
   );
 }
