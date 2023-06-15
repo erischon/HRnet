@@ -3,16 +3,17 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import MyModal from "my-react-modal-erischon";
+
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
 import { addEmployee } from "../features/employee/employeeSlice";
-import MyModal from "./modal/MyModal";
 
 /**
  * @description Create employee form component
  */
 function CreateEmployeeForm() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
 
