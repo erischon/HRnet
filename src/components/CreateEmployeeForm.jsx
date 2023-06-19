@@ -13,7 +13,7 @@ import { addEmployee } from "../features/employee/employeeSlice";
  * @description Create employee form component
  */
 function CreateEmployeeForm() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
 
