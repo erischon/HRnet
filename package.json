@@ -1,7 +1,10 @@
 {
   "name": "hrnet",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "A React project",
+  "author": "Eri Schön",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
