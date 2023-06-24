@@ -1,18 +1,56 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import CreateEmployeeForm from "../components/CreateEmployeeForm";
+
+import MyModal from "my-react-modal-erischon";
+// import MyModal from "./test";
 
 /**
  * @description Page for creating an employee
  */
 function CreateEmployee() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const navigate = useNavigate();
+
+  const modalProps = {
+    title: "Employee created successfully",
+    message: "What do you want to do next?",
+    actionA: {
+      title: "Back to creation form",
+      action: () => {
+        setIsModalOpen(false);
+      },
+    },
+    actionB: {
+      title: "Go to employee list",
+      action: () => {
+        navigate("/employee");
+      },
+    },
+    isOpen: setIsModalOpen,
+    ui: {
+      modalBackgroundContainer: "bg-zinc-600",
+      modalBackgroundContainerOpacity: "bg-opacity-100",
+      modalBackground: "bg-zinc-100",
+      modalColor: "text-black",
+      buttonABackground: "bg-orange-600",
+      buttonAColor: "text-white",
+      buttonBBackground: "bg-orange-600",
+      buttonBColor: "text-white",
+    },
+  };
+
   return (
     <>
-      <div className="w-full ">
-        <h2 className="text-2xl font-semibold text-center mb-4">
-          Create Employee
-        </h2>
+      <h2 className="text-2xl font-semibold text-center mb-4">
+        Create Employee
+      </h2>
 
-        <CreateEmployeeForm />
-      </div>
+      {isModalOpen ? <MyModal modalProps={modalProps} /> : null}
+
+      <CreateEmployeeForm setModal={setIsModalOpen} />
     </>
   );
 }

@@ -1,24 +1,28 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+
+import PropTypes from "prop-types";
 
 // import MyModal from "my-react-modal-erischon";
-import MyModal from "./test.jsx";
 
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
 import { addEmployee } from "../features/employee/employeeSlice";
 
+CreateEmployeeForm.propTypes = {
+  setModal: PropTypes.func,
+};
 /**
  * @description Create employee form component
  */
-function CreateEmployeeForm() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+function CreateEmployeeForm({ setModal }) {
+  // const [isModalOpen, setIsModalOpen] = useState(true);
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const form = useForm({
     defaultValues: {
@@ -42,40 +46,41 @@ function CreateEmployeeForm() {
 
     dispatch(addEmployee(data));
     form.reset();
-    setIsModalOpen(true);
+    setModal(true);
+    // setIsModalOpen(true);
   };
 
-  const modalProps = {
-    title: "Employee created successfully",
-    message: "What do you want to do next?",
-    actionA: {
-      title: "Back to creation form",
-      action: () => {
-        setIsModalOpen(false);
-      },
-    },
-    actionB: {
-      title: "Go to employee list",
-      action: () => {
-        navigate("/employee");
-      },
-    },
-    isOpen: setIsModalOpen,
-    ui: {
-      modalBackgroundContainer: "bg-zinc-600",
-      modalBackgroundContainerOpacity: "bg-opacity-100",
-      modalBackground: "bg-zinc-100",
-      modalColor: "text-black",
-      buttonABackground: "bg-orange-600",
-      buttonAColor: "text-white",
-      buttonBBackground: "bg-orange-600",
-      buttonBColor: "text-white",
-    },
-  };
+  // const modalProps = {
+  //   title: "Employee created successfully",
+  //   message: "What do you want to do next?",
+  //   actionA: {
+  //     title: "Back to creation form",
+  //     action: () => {
+  //       setIsModalOpen(false);
+  //     },
+  //   },
+  //   actionB: {
+  //     title: "Go to employee list",
+  //     action: () => {
+  //       navigate("/employee");
+  //     },
+  //   },
+  //   isOpen: setIsModalOpen,
+  //   ui: {
+  //     modalBackgroundContainer: "bg-zinc-600",
+  //     modalBackgroundContainerOpacity: "bg-opacity-100",
+  //     modalBackground: "bg-zinc-100",
+  //     modalColor: "text-black",
+  //     buttonABackground: "bg-orange-600",
+  //     buttonAColor: "text-white",
+  //     buttonBBackground: "bg-orange-600",
+  //     buttonBColor: "text-white",
+  //   },
+  // };
 
   return (
     <>
-      {isModalOpen ? <MyModal modalProps={modalProps} /> : null}
+      {/* {isModalOpen ? <MyModal modalProps={modalProps} /> : null} */}
 
       <form
         className="flex flex-col w-full sm:max-w-xl px-6 py-6 mx-auto mb-6 bg-slate-50 rounded-md"
