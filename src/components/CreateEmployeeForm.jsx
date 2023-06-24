@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import MyModal from "my-react-modal-erischon";
+// import MyModal from "my-react-modal-erischon";
+import MyModal from "./test.jsx";
 
 import { states } from "../constants/states.list";
 import { departments } from "../constants/departments.list";
@@ -13,7 +14,7 @@ import { addEmployee } from "../features/employee/employeeSlice";
  * @description Create employee form component
  */
 function CreateEmployeeForm() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const { employeeList } = useSelector((state) => state.employee);
   const dispatch = useDispatch();
 
@@ -60,10 +61,22 @@ function CreateEmployeeForm() {
       },
     },
     isOpen: setIsModalOpen,
+    ui: {
+      modalBackgroundContainer: "bg-zinc-600",
+      modalBackgroundContainerOpacity: "bg-opacity-100",
+      modalBackground: "bg-zinc-100",
+      modalColor: "text-black",
+      buttonABackground: "bg-orange-600",
+      buttonAColor: "text-white",
+      buttonBBackground: "bg-orange-600",
+      buttonBColor: "text-white",
+    },
   };
 
   return (
     <>
+      {isModalOpen ? <MyModal modalProps={modalProps} /> : null}
+
       <form
         className="flex flex-col w-full sm:max-w-xl px-6 py-6 mx-auto mb-6 bg-slate-50 rounded-md"
         onSubmit={handleSubmit(onSubmit)}
@@ -270,8 +283,6 @@ function CreateEmployeeForm() {
           Submit
         </button>
       </form>
-
-      {isModalOpen ? <MyModal modalProps={modalProps} /> : null}
     </>
   );
 }
