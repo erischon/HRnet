@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import CreateEmployeeForm from "../components/CreateEmployeeForm";
 
 import MyModal from "my-react-modal-erischon";
-// import MyModal from "./test";
 
 /**
  * @description Page for creating an employee
