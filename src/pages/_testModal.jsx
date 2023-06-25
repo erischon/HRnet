@@ -83,7 +83,7 @@ function MyModal({ modalProps }) {
   return (
     <>
       <div
-        className={`fixed w-screen h-screen top-0 left-0 z-50 transition duration-300 ${modalBackgroundContainer} ${modalBackgroundContainerOpacity} flex justify-center items-center overflow-x-hidden overflow-y-auto`}
+        className={`fixed w-full h-full top-0 left-0 z-50 transition duration-300 ${modalBackgroundContainer} ${modalBackgroundContainerOpacity} flex justify-center items-center overflow-x-hidden overflow-y-auto`}
       >
         <div
           className={`${modalBackground} ${modalColor} w-11/12 md:max-w-md mx-auto rounded-md shadow-lg z-50 overflow-y-auto`}
@@ -118,4 +118,5 @@ function MyModal({ modalProps }) {
     </>
   );
 }
+
 export default MyModal;
