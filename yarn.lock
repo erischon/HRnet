@@ -1930,12 +1930,9 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-my-react-modal-erischon@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/my-react-modal-erischon/-/my-react-modal-erischon-0.0.4.tgz#2c06ba79928aaaacaaa62d133921ed50cf56ce8f"
-  integrity sha512-p2TVp4TPceXhrmsxP+oMwq2OyNcgd47/6B1ySBvdoG1k46TNpDLGj4axRr2VJ0rVB0N+qpwv4nCZeeQ6JKtHyA==
-  dependencies:
-    react-icons "^4.9.0"
+"my-react-modal-erischon@link:../my-react-modal-erischon":
+  version "0.0.0"
+  uid ""
 
 mz@^2.7.0:
   version "2.7.0"

@@ -10,7 +10,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "link-local-lib": "yarn link my-react-modal-erischon && yarn link react && yarn unlink react-dom && yarn add link:../my-react-modal-erischon",
+    "unlink-local-lib": "yarn remove my-react-modal-erischon && yarn unlink my-react-modal-erischon && yarn unlink react && yarn unlink react-dom && yarn add my-react-modal-erischon"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -19,7 +21,7 @@
     "@mui/material": "^5.13.4",
     "@mui/x-data-grid": "^6.6.0",
     "@reduxjs/toolkit": "^1.9.5",
-    "my-react-modal-erischon": "^0.0.4",
+    "my-react-modal-erischon": "link:../my-react-modal-erischon",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.2",
