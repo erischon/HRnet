@@ -1,5 +1,15 @@
 # HRnet
 
+Module fonctionnel pour une Application web de gestion de dossier employés pour une société financière.
+
+## Installation
+
+`npm i`
+
+ou
+
+`yarn`
+
 ## Dependencies
 
 - react-router-dom
@@ -10,7 +20,3 @@
 - my-react-modal-erischon
 - MUI
 - Tailwindcss
-
-## Versions
-
-### 0.0.1 :
