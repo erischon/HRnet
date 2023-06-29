@@ -1930,12 +1930,12 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-my-react-modal-erischon@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/my-react-modal-erischon/-/my-react-modal-erischon-0.0.10.tgz#b7b5d4d1f01fcb0b133caa1d00ac1ef1ac059075"
-  integrity sha512-kXr//1L2iq9MmIwnVvSwhyPu7tTGiydN2YVi1K6FU/8CP16GZtvV0gUSqpo7gc8q5FGXFZqHHFrY1XQtKqZEjg==
+my-react-modal-erischon@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/my-react-modal-erischon/-/my-react-modal-erischon-0.0.12.tgz#d2561dac0f9965aa7ef3871885528f53cc8863c1"
+  integrity sha512-XmbBQVdeeHw+UlVm93zObafrzapPRhNCfocJd1e0HV2/CbVGqGlT9dLDCZKJPN0xuWQRySkib7AHTXlPBXTNWw==
   dependencies:
-    my-react-modal-erischon "link:../../../../../../AppData/Local/Yarn/Cache/v6/npm-my-react-modal-erischon-0.0.10-b7b5d4d1f01fcb0b133caa1d00ac1ef1ac059075-integrity/node_modules/my-react-modal-erischon"
+    my-react-modal-erischon "link:../../../../../../AppData/Local/Yarn/Cache/v6/npm-my-react-modal-erischon-0.0.12-d2561dac0f9965aa7ef3871885528f53cc8863c1-integrity/node_modules/my-react-modal-erischon"
     react "^18.2.0"
     react-dom "^18.2.0"
     react-icons "^4.9.0"

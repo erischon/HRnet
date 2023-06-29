@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import CreateEmployeeForm from "../components/CreateEmployeeForm";
 
+// import MyModal from "./testModal";
 import { MyModal } from "my-react-modal-erischon";
 
 /**
@@ -30,7 +31,7 @@ function CreateEmployee() {
     },
     isOpen: setIsModalOpen,
     ui: {
-      modalBackgroundContainer: "bg-yellow-600",
+      modalBackgroundContainer: "bg-red-600",
       modalBackgroundContainerOpacity: "bg-opacity-90",
       modalBackground: "bg-zinc-100",
       modalColor: "text-black",
