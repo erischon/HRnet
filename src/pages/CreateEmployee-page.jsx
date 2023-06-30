@@ -10,7 +10,7 @@ import { MyModal } from "my-react-modal-erischon";
  * @description Page for creating an employee
  */
 function CreateEmployee() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigate = useNavigate();
 
