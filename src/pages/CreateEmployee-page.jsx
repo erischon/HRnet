@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 import CreateEmployeeForm from "../components/CreateEmployeeForm";
 
-// import MyModal from "./testModal";
+// import MyModal from "../components/testModal";
 import { MyModal } from "my-react-modal-erischon";
 
 /**
  * @description Page for creating an employee
  */
 function CreateEmployee() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const navigate = useNavigate();
 

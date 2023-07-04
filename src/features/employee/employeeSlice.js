@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { employeesData } from "../../data/employees";
 
 // Initial state
 const initialState = {
