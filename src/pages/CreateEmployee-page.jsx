@@ -10,7 +10,7 @@ import { MyModal } from "my-react-modal-erischon";
  * @description Page for creating an employee
  */
 function CreateEmployee() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ function CreateEmployee() {
     },
     isOpen: setIsModalOpen,
     ui: {
-      modalBackgroundContainer: "bg-red-600",
+      modalBackgroundContainer: "bg-gray-600",
       modalBackgroundContainerOpacity: "bg-opacity-90",
       modalBackground: "bg-zinc-100",
       modalColor: "text-black",
